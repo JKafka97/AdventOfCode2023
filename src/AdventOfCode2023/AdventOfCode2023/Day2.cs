@@ -61,7 +61,7 @@ public static class Day2
 
         try
         {
-            string[] lines = File.ReadAllLines(filePath);
+            var lines = File.ReadAllLines(filePath);
             foreach (var line in lines)
             {
                 var game = line[5..].Split(":");

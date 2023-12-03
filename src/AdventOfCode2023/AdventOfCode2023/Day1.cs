@@ -4,10 +4,10 @@ public static class Day1
 {
     public static int FirstPuzzle(string filePath)
     {
-        int sum = 0;
+        var sum = 0;
         try
         {
-            string[] lines = File.ReadAllLines(filePath);
+            var lines = File.ReadAllLines(filePath);
 
             foreach (var line in lines)
             {
@@ -33,7 +33,7 @@ public static class Day1
 
     public static int SecondPuzzle(string filePath)
     {
-        int sum = 0;
+        var sum = 0;
         var numbersDict = new Dictionary<string, int>() {
         {"one", 1 },
         {"two",2 },
@@ -57,7 +57,7 @@ public static class Day1
 
         try
         {
-            string[] lines = File.ReadAllLines(filePath);
+            var lines = File.ReadAllLines(filePath);
 
             foreach (var line in lines)
             {
