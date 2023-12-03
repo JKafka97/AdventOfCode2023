@@ -10,7 +10,5 @@ internal class Program
         Console.WriteLine($"Day 2 second puzzle: {Day2.SecondPuzzle(Path.Combine(PathConstants.RootPath, "Day2.txt"))}");
         Console.WriteLine($"Day 3 first puzzle: {Day3.FirstPuzzle(Path.Combine(PathConstants.RootPath, "Day3.txt"))}");
         Console.WriteLine($"Day 3 second puzzle: {Day3.SecondFirstPuzzle(Path.Combine(PathConstants.RootPath, "Day3.txt"))}");
-
-
     }
 }
