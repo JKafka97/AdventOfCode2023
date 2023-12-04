@@ -7,41 +7,34 @@ public class Day3
         var lines = File.ReadAllLines(filePath);
         var n = lines.Length;
         var m = lines[0].Length;
-
-        bool isSymbol(int i, int j) =>
-            0 <= i && i < n && 0 <= j && j < m && (lines[i][j] != '.' && !char.IsDigit(lines[i][j]));
+        bool isSymbol(int i, int j) => i >= 0 && i < n && j >= 0 && j < m && (lines[i][j] != '.' && !char.IsDigit(lines[i][j]));
 
         var ans = 0;
 
         for (int i = 0; i < n; i++)
         {
-            for (int j = 0, start, parsedNum; j < m;)
+            for (int j = 0; j < m;)
             {
-                start = j;
-                string num = "";
+                var start = j;
+                var num = string.Empty;
 
                 while (j < m && char.IsDigit(lines[i][j]))
-                {
                     num += lines[i][j++];
-                }
 
                 if (!string.IsNullOrEmpty(num))
                 {
-                    parsedNum = int.Parse(num);
+                    var parsedNum = int.Parse(num);
 
                     if (isSymbol(i, start - 1) || isSymbol(i, j))
-                    {
                         ans += parsedNum;
-                        continue;
-                    }
-
-                    for (int k = start - 1; k <= j; k++)
+                    else
                     {
-                        if (isSymbol(i - 1, k) || isSymbol(i + 1, k))
-                        {
-                            ans += parsedNum;
-                            break;
-                        }
+                        for (int k = start - 1; k <= j; k++)
+                            if (isSymbol(i - 1, k) || isSymbol(i + 1, k))
+                            {
+                                ans += parsedNum;
+                                break;
+                            }
                     }
                 }
                 j++;
@@ -51,7 +44,7 @@ public class Day3
         return ans;
     }
 
-    public static int SecondFirstPuzzle(string filePath)
+    public static int SecondPuzzle(string filePath)
     {
         var lines = File.ReadAllLines(filePath);
         var n = lines.Length;
@@ -63,7 +56,7 @@ public class Day3
             goods.Add([]);
             for (int j = 0; j < m; j++)
             {
-                goods[i].Add(new List<int>());
+                goods[i].Add([]);
             }
         }
 

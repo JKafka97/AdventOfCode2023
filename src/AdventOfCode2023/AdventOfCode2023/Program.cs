@@ -9,6 +9,8 @@ internal class Program
         Console.WriteLine($"Day 2 first puzzle: {Day2.FirstPuzzle(Path.Combine(PathConstants.RootPath, "Day2.txt"))}");
         Console.WriteLine($"Day 2 second puzzle: {Day2.SecondPuzzle(Path.Combine(PathConstants.RootPath, "Day2.txt"))}");
         Console.WriteLine($"Day 3 first puzzle: {Day3.FirstPuzzle(Path.Combine(PathConstants.RootPath, "Day3.txt"))}");
-        Console.WriteLine($"Day 3 second puzzle: {Day3.SecondFirstPuzzle(Path.Combine(PathConstants.RootPath, "Day3.txt"))}");
+        Console.WriteLine($"Day 3 second puzzle: {Day3.SecondPuzzle(Path.Combine(PathConstants.RootPath, "Day3.txt"))}");
+        Console.WriteLine($"Day 4 first puzzle: {Day4.FirstPuzzle(Path.Combine(PathConstants.RootPath, "Day4.txt"))}");
+        Console.WriteLine($"Day 4 second puzzle: {Day4.SecondPuzzle(Path.Combine(PathConstants.RootPath, "Day4.txt"))}");
     }
 }
