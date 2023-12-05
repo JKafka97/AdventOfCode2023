@@ -12,5 +12,7 @@ internal class Program
         Console.WriteLine($"Day 3 second puzzle: {Day3.SecondPuzzle(Path.Combine(PathConstants.RootPath, "Day3.txt"))}");
         Console.WriteLine($"Day 4 first puzzle: {Day4.FirstPuzzle(Path.Combine(PathConstants.RootPath, "Day4.txt"))}");
         Console.WriteLine($"Day 4 second puzzle: {Day4.SecondPuzzle(Path.Combine(PathConstants.RootPath, "Day4.txt"))}");
+        Console.WriteLine($"Day 5 first puzzle: {Day5.FirstPuzzle(Path.Combine(PathConstants.RootPath, "Day5.txt"))}");
+        Console.WriteLine($"Day 5 second puzzle: {Day5.SecondPuzzle(Path.Combine(PathConstants.RootPath, "Day5.txt"))}");
     }
 }
