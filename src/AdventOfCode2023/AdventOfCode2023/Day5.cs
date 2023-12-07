@@ -1,6 +1,4 @@
-﻿using System.IO;
-
-namespace AdventOfCode2023;
+﻿namespace AdventOfCode2023;
 
 public static class Day5
 {
@@ -32,7 +30,7 @@ public static class Day5
         return locs.Min();
     }
 
-    static long FindLoc(long seed, List<List<(long dstStart, long srcStart, long rangeLen)>> maps)
+    private static long FindLoc(long seed, List<List<(long dstStart, long srcStart, long rangeLen)>> maps)
     {
         var curNum = seed;
 
@@ -51,10 +49,9 @@ public static class Day5
         return curNum;
     }
 
-
     public static long SecondPuzzle(string filePath)
     {
-        string[] lines = File.ReadAllLines(filePath);
+        var lines = File.ReadAllLines(filePath);
 
         var rawSeeds = lines[0].Split(' ').Skip(1).Select(long.Parse).ToList();
         var seeds = Enumerable.Range(0, rawSeeds.Count / 2)
@@ -63,10 +60,10 @@ public static class Day5
 
         var maps = new List<List<(long, long, long)>>();
 
-        int i = 2;
+        var i = 2;
         while (i < lines.Length)
         {
-            string[] categories = lines[i].Split(' ')[0].Split('-');
+            var categories = lines[i].Split(' ')[0].Split('-');
             maps.Add([]);
 
             i += 1;
@@ -120,7 +117,7 @@ public static class Day5
         return ans;
     }
 
-    static IEnumerable<(long, long)> Remap(long lo, long hi, List<(long, long, long)> m)
+    private static IEnumerable<(long, long)> Remap(long lo, long hi, List<(long, long, long)> m)
     {
         var ans = new List<(long, long, long)>();
 
@@ -160,6 +157,4 @@ public static class Day5
             yield return (ans[^1].Item2 + 1, hi);
         }
     }
-
-
 }
